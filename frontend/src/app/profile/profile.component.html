@@ -1,0 +1,50 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title style="font-size: 30px; margin-top: 120px; margin-left: 30px;">Samuel Teo Chee Hong</mat-card-title>
+  </mat-card-header>
+
+</mat-card>
+
+<div class="outline-body">
+    <mat-card-title style="font-size: 20px; margin: 20px;">Current internship</mat-card-title>
+
+  <mat-card class="internship-card">
+    <mat-card-header  *ngIf="internship">
+
+      <div mat-card-avatar class="intern-image"></div>
+      <mat-card-title> <p class="internship-title">{{internship.companyName}}</p> </mat-card-title>
+      <mat-card-content> <p class="job-scope">{{internship.jobScope}}</p> </mat-card-content>
+      <mat-card-content class="job-description">{{internship.description}}</mat-card-content>
+
+    </mat-card-header>
+    <mat-progress-spinner 
+    class="progress-spinner"
+    [color] = "color"
+    [mode] = "mode"
+    [value] = "value" 
+    [diameter]="40">
+</mat-progress-spinner>
+<mat-card-content class="progress-percentage" id ="progress-percentage">0%</mat-card-content>
+  </mat-card>
+
+<hr>
+<mat-card-title style="font-size: 20px; margin: 20px;">Personal Information</mat-card-title>
+
+<mat-card class="internship-card">
+  <mat-card-header >
+
+    <mat-card-title> <p class="resume-title">Resume</p> </mat-card-title>
+    
+    <label class="custom-file-upload">
+      <input type="file" (change)="selectFile($event, i)"/>
+      Upload
+    </label> 
+
+    <mat-card-content class="filename"> <a id="file-link" download>{{filename}} </a> </mat-card-content>
+
+  </mat-card-header>
+
+</mat-card>
+
+</div>

@@ -1,0 +1,97 @@
+<div class="center">
+    <img class="img-fluid img-hover"
+		src="assets/images/monashlogo.png">
+    <form (ngSubmit)="register(registerForm)" #registerForm="ngForm" autocomplete="off" class="formpad">
+      <p style="font-size:30px"><b>Monash University Malaysia</b>
+        <br/> Employer Register </p>
+      <!-- <div class="form-group">
+        <label for="age">Username</label> <input type="text"
+          class="form-control" id="username" required
+          ngModel #username="ngModel" name="username">
+
+        <div [hidden]="username.valid || username.pristine" class="alert alert-danger form-control">
+            Username is required
+        </div>
+      </div> -->
+
+      <div class="form-group">
+        <label for="age">Email</label> <input type="text"
+          class="form-control" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          ngModel #email="ngModel" name="email">
+
+        <div [hidden]="email.valid || email.pristine" class="alert alert-danger" style="color: red; width: 40%; margin: auto;">
+            Email is required
+        </div>
+      </div>
+   
+      <div class="form-group">
+        <label for="registerPassword">Password</label> <input type="password"
+          class="form-control" id="password" required
+          ngModel #registerPassword="ngModel" name="registerPassword">
+        
+        <div [hidden]="registerPassword.valid || registerPassword.pristine" class="alert alert-danger" style="color: red; width: 40%; margin: auto;">
+          Password is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="companyName">Company Name</label> <input type="text"
+          class="form-control" id="companyName" required
+          ngModel #companyName="ngModel" name="companyName">
+
+        <div [hidden]="companyName.valid || companyName.pristine" class="alert alert-danger" style="color: red; width: 40%; margin: auto;">
+          Company Name is required
+        </div>
+      </div>
+  
+      <!-- <div class="form-group">
+        <label for="industry">Industry</label> <input type="text"
+          class="form-control" id="Industry Type" required
+          [(ngModel)]="client.industry" name="industry">
+      </div> -->
+  
+      <!-- Newly added fields-->
+      <!-- <div class="form-group">
+        <label for="email">Contact Email</label> <input type="text"
+          class="form-control" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          ngModel #email="ngModel" name="email">
+
+        <div [hidden]="email.valid || email.pristine" class="alert alert-danger form-control">
+          Email is required
+        </div>
+      </div> -->
+  
+      <div class="form-group">
+        <label for="phone">Contact Phone Number</label> <input type="number"
+          class="form-control" id="phone" required
+          ngModel #phone="ngModel" name="phone">
+
+        <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger" style="color: red; width: 40%; margin: auto;">
+            Phone Number is required
+        </div>
+      </div>
+  
+      <!-- <div class="form-group">
+        <label for="specification">Job Specification</label> <input type="text"
+          class="form-control" id="specification" required
+          [(ngModel)]="company.jSpec" name="specification">
+      </div> -->
+  
+      <div class="form-group">
+        <label for="address">Address</label> <textarea type="text"
+          class="form-control" id="address" required
+          ngModel #address="ngModel" name="address"> </textarea>
+
+        <div [hidden]="address.valid || address.pristine" class="alert alert-danger" style="color: red; width: 40%; margin: auto;">
+          Address is required
+        </div>
+      </div>
+  
+      
+      <button [disabled]="!registerForm.form.valid" type="submit" class="btn btn-success">Submit</button>
+  
+  
+    </form>
+    <br> <a routerLink="/employer-login">Back to Login</a>
+  </div>
+  

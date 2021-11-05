@@ -1,0 +1,21 @@
+<div class="navbar" style="background-color:steelblue">
+  <h1 style="color:white;">Coordinator Dashboard</h1>
+  <h3 style="color:white;">Student List</h3>
+</div>
+
+<table class="w3-table">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Year</th>
+    <th>Major</th>
+    <th>Status</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td (click)  = "goToStudent(student)"> {{ student.firstName }}</td>
+    <td (click)  = "goToStudent(student)">{{ student.lastName }}</td>
+    <td (click)  = "goToStudent(student)">{{ student.year }}</td>
+    <td (click)  = "goToStudent(student)">{{ student.course }}</td>
+    <td (click)  = "goToStudent(student)">{{ student.status }}</td>
+  </tr>
+</table>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      title {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* Float four columns side by side */
+      .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+      }
+
+      /* Remove extra left and right margins, due to padding */
+      .row {
+        margin: 0 -5px;
+      }
+
+      .internshipList {
+        padding: 15px;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        padding: 5%;
+      }
+
+      /* Responsive columns */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Style the counter cards */
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+
+        text-align: center;
+        background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h1>List of current on-going internships.</h1>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <!-- <div class="card">
+          <div class="center"> -->
+
+        <h1>{{ dispDat }}</h1>
+        <ul class="newstudlist">
+          <li
+            class="internshipList"
+            *ngFor="let student of students; let i = index"
+          >
+            <div class="card">
+              <div class="center">
+                {{ i + 1 }}) {{ student }}
+                <button *ngIf="isCollapsed" (click)="getStudentDetails($event)">
+                  See Student Info
+                  <!-- See details of {{student}} -->
+                </button>
+                <button
+                  *ngIf="!isCollapsed"
+                  (click)="getStudentDetails($event, this.id); id = 'i'"
+                >
+                  Hide Student Info
+                  <!-- See details of {{student}} -->
+                </button>
+                <button (click)="generateStudentReport(i)">
+                  Generate Report
+                </button>
+                <p *ngFor="let hero of newlist"></p>
+
+                <div *ngIf="!isCollapsed">
+                  <!-- {{newlist[i]}} -->
+                  <div *ngFor="let hero of newlist[i]; let j = index">
+                    {{ newlist[i][j] }}
+                  </div>
+                </div>
+                <br />
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- </div>
+        </div> -->
+      </div>
+    </div>
+  </body>
+</html>

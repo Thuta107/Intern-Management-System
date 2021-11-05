@@ -1,0 +1,36 @@
+<div>
+    <h2 style="color:rgb(252, 252, 252);"> Post Internship Position</h2>
+</div>
+
+<form (ngSubmit)="onAddPost(postForm)" #postForm="ngForm" autocomplete="off" class="formpad">
+    
+
+    <div class="form-group">
+        <label>Internship Title</label>
+        <input type="text" style="width:90%;" ngModel class="form-control" placeholder="-- Job Title --" #jobTitle="ngModel" name="jobTitle" required maxlength="50">
+        <div [hidden]="jobTitle.valid || jobTitle.pristine" class="alert alert-danger" style="width:90%; color: red;">
+            Internship Title is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Internship Description</label>
+        <textarea style="width:90%; height:100px;" type="text" placeholder="-- Explain Details Here --" ngModel class="form-control" #jobDescription="ngModel" name="jobDescription" required></textarea>
+        <div [hidden]="jobDescription.valid || jobDescription.pristine" class="alert alert-danger" style="width:90%; color: red;">
+            Internship Description is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Number of Positions</label>
+        <input style="width:90%;" placeholder="-- Position Available --" min="1" type="number" ngModel class="form-control" #seats="ngModel" name="seats" required>
+        <div [hidden]="seats.valid || seats.pristine" class="alert alert-danger" style="width:90%; color: red;">
+            Number of Position must be specified
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button [disabled]="!postForm.form.valid"  class="btn btn-success" type="submit" name="submitbutton">Submit form</button>
+        <button class="btn btn-primary" (click)="redirectHome()" type="button"> Cancel </button>
+    </div>
+</form>

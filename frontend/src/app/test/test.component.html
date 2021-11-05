@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">Hi {{ username }}</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-2">Send to</div>
+      <div class="col-md-4">
+        <input
+          type="text"
+          placeholder="Enter Acount Number"
+          [(ngModel)]="transaction.receiveracc"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">Amount</div>
+      <div class="col-md-4">
+        <input type="text" placeholder="Enter Amount" [(ngModel)]="transaction.amount" />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="registertransaction()">
+      Transfer
+    </button>
+    <button type="submit" class="btn btn-link" routerLink="/transaction">
+      Check Statement
+    </button>
+  </div>
+</div>

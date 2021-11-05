@@ -1,0 +1,30 @@
+<div class="center">
+	<img class="img-fluid img-hover"
+		src="assets/images/monashlogo.png">
+	<form (ngSubmit)="loginEmail()">
+		<p style="font-size:30px"><b>Monash University Malaysia</b>
+			<br/>Employer Sign-In</p>
+		<div class="form-group">
+			<label for="age">Username</label> <input type="text"
+				class="form-control" id="username"  size="250px"
+				required [(ngModel)]="user.username" name="Username">
+		</div>
+		<div class="form-group">
+			<label for="age">Password</label> <input type="password"
+				class="form-control" id="password" required
+				[(ngModel)]="user.password" name="Password">
+		</div>
+		<button type="submit" class="btn btn-success">Login</button>
+
+	</form>
+
+	<button (click)="login()" type="submit" class="btn btn-success">Login with Google</button>
+
+	<router-outlet></router-outlet>
+	<br>
+  
+  <button class="btn btn-primary" (click)="redirectNewEmployer()">Company Register</button>
+	<br> <a routerLink="/Login">Back to Login</a>
+</div>
+
+

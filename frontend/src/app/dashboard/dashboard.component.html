@@ -1,0 +1,25 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+<div class="navbar" style="background-color: darkblue">
+  <a class="active" (click)="redirectHome()">Home<span class="sr-only">(current)</span></a>
+	<a (click)="redirectStudentFormUpload()" *ngIf="admin">Student Details</a>
+	<a (click)="redirectUpload()" *ngIf="admin">Weekly Reports</a>
+	<a (click)="redirectMonthly()" *ngIf="admin">Monthly Reports</a>
+	<a (click)="redirectMyApplications()" *ngIf="admin">My Applications</a>
+	<a (click)="redirectContactUs()" *ngIf="admin">Contact Us</a>
+	<a (click)="redirectAboutUs()" *ngIf="admin">About Us</a>
+	<a (click)="redirectProfile()" *ngIf="admin">Profile</a>
+
+	<a (click)="logout()">Logout</a>
+	<input type="text" id="searchBox" placeholder="e.g. Data Analyst" autocomplete="off" list="jobList" (keyup)="searchKey($event)">
+	<button type="submit" (click)="getInternshipList()">Search</button>
+</div>
+
+<div>
+  <datalist id="jobList">
+    <option *ngFor="let internship of internships">
+      {{ internship.jobScope | titlecase }}
+    </option>
+  </datalist>
+</div>

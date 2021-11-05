@@ -1,0 +1,74 @@
+<div style="text-align: left; align:left; margin: 20px">
+	<p style="font-size:30px;">Form Upload</p>
+	<p>Documents (i.e. resume, diaries, report) to be submitted may be uploaded through this portal.</p>
+	<p style="font-size:20px;">Upload file</p>
+	<p>Choose a file to be uploaded through the file explorer and click "Upload" to submit file to internship managerment system</p>
+
+<div *ngIf="currentFileUpload" class="progress">
+</div>
+ 
+<label class="btn btn-default">
+	<input type="file" (change)="selectFile($event)">
+</label>
+ 
+<button class="btn btn-success"
+	(click)="upload()">Upload</button>
+	
+<!-- Development Purposes
+<button (click)="getAllImageFiles()">Get All Files</button>
+<button (click)="test()">test</button>
+<button (click)="showfiles()">Show files</button>  
+-->
+
+</div>
+
+<div *ngIf="isDataLoadedImage">
+	<div *ngFor="let file of listFiles">
+		<p>{{file}}</p>
+		<img src= "http://localhost:8080/api/retrieve/imagefile?filename={{file}}&username={{currentUser}}" style="max-width:350px"/>
+		<button (click)="downloadImage()">Download Image</button>
+		<button (click)="deleteFile(file,currentUser)">Delete Image</button>
+	</div>
+</div>
+
+
+<div style="margin: 20px">
+		<p style="font-size:30px;">Weekly Report Submission</p>
+		<div class="mat-elevation-z8">
+	<table mat-table [dataSource]="dataSource" >
+  
+	  <!-- Position Column -->
+	  <ng-container matColumnDef="week">
+		<th mat-header-cell *matHeaderCellDef> Week </th>
+		<td mat-cell *matCellDef="let element"> {{element.period}} </td>
+	  </ng-container>
+  
+	  <!-- Name Column -->
+	  <ng-container matColumnDef="name">
+		<th mat-header-cell *matHeaderCellDef> Name </th>
+		<td mat-cell *matCellDef="let element"> <a href="{{element.link}}" download>{{element.name}} </a> </td>
+	  </ng-container>
+  
+	  <!-- Weight Column -->
+	  <ng-container matColumnDef="status">
+		<th mat-header-cell *matHeaderCellDef> Status </th>
+		<td mat-cell *matCellDef="let element"> {{element.status}} </td>
+	  </ng-container>
+
+	  <ng-container matColumnDef="submit">
+		<th mat-header-cell *matHeaderCellDef> Upload </th>
+		<td mat-cell *matCellDef="let element; let i = index">	 <label class="custom-file-upload">
+				<input type="file" (change)="selectFile($event, i)"/>
+				Upload
+			</label> 
+		</td>
+	  </ng-container>
+	
+  
+	  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	</table>
+  
+	<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  </div>

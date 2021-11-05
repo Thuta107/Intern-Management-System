@@ -1,0 +1,137 @@
+
+#pcap:first-letter {
+	text-transform: uppercase;
+}
+.example-card {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  background-image: url("https://assets.change.org/photos/3/wn/ua/SnwNuAfdCHjPqqi-800x450-noPad.jpg?1554888818");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  text-shadow: 1px 1px #000000;
+
+}
+
+.internship-card {
+  margin: auto;
+  width: 95%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.outline-body {
+
+  background-color: #f8f8f8;
+  margin: 50px auto;
+  width: 60%;
+  min-height: 500px;
+  border-style: solid;
+  border-width: 2px;
+border-color: #eeeeee;
+}
+
+
+
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+}
+
+.internship-title{
+  position: absolute;
+  left: 80px;
+  font-size: 17px;
+
+}
+
+.internship-title::first-letter{
+  text-transform: uppercase;
+
+}
+
+.job-scope {
+  position: absolute;
+  left: 80px;
+  top: 60px;
+  font-size: 15px;
+  
+}
+
+.job-scope::first-letter{
+  text-transform: uppercase;
+  
+}
+
+.job-description {
+  position: absolute;
+  left: 80px;
+  top: 90px;
+  max-width: 65%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; // This is where the magic happens
+  font-size: 15px;
+}
+.intern-image {
+  position: absolute;
+  top: 10%;
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.progress-spinner {
+  position:absolute; 
+  left: 80%;
+  top: 30%;
+  
+}
+
+.progress-percentage {
+  position: absolute;
+  left: 81.5%;
+  top: 60%;
+}
+
+.custom-file-upload {
+  position: absolute;
+  left: 79%;
+  top: 33%;
+  border: 1px solid #ccc;
+  display: inline-block;
+  background-color: #ccc;
+  cursor: pointer;
+  padding: 6px 12px;
+
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.resume-title{
+  position: absolute;
+  top: 25%;
+  left: 80px;
+  font-size: 17px;
+
+}
+
+.filename {
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  font-size: 15px;
+  text-decoration: underline;
+  color: blue;
+  
+}

@@ -1,0 +1,25 @@
+<h1>Enter Security Code to Generate API</h1>
+<form (ngSubmit)="addSecurityCode()" ngNativeValidate >
+
+	<div class="form-group">
+		<label>Security Code</label> <input type="password" required
+			class="form-control" id="securityCode" align="center"
+			name="securityCode" [(ngModel)]="securityCode">
+	</div>
+
+	<button type="submit" [disabled]="securityCode == ''"class="btn btn-success">Submit Security
+		Code</button>
+
+</form>
+<br>
+<br>
+<form (ngSubmit)="getAPIKey()">
+	<div *ngIf="secure">
+		<button type="submit" class="btn btn-success">Get API Key</button>
+	</div>
+
+</form>
+
+<div *ngIf="showAPI" style="font-size:30px;">
+<label>{{apiString}}</label>
+</div>

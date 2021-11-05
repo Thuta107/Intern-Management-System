@@ -1,0 +1,75 @@
+table {
+  border-collapse: none;
+  width: 100%;
+}
+
+th{
+padding: 8px;
+text-align: center;
+border-bottom: 0px solid #ddd;
+background-color: darkblue;
+color: white;
+font-weight: bold;
+font-size: 120%;
+}
+
+tr{
+  border-bottom: 1px solid black;
+}
+
+tr:nth-child(even){
+background-color: #a4978e;
+}
+
+tr:nth-child(odd){
+background-color: gray;
+}
+
+td div{
+padding: 8px;
+text-align: center;
+border-bottom: 0px solid #ddd;
+font-weight: bold;
+vertical-align: middle;
+font-size: 120%;
+color: black;
+}
+
+.title{
+  font-size: 200%; 
+  font-weight: bold;
+  padding: 40px;
+  text-align: left;
+}
+
+button {
+  border-style: hidden;
+  background-color: #e7e7e7;
+  padding: 8px 16px;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  size: 17px;
+}
+
+.details{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+.details2{
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 120%;
+}
+
+.dropbutton{
+  background-color:gray;
+}
+
+hr{
+  margin:0px;
+}

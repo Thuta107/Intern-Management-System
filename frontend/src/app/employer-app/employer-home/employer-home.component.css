@@ -1,0 +1,54 @@
+.mat-grid-tile {
+  background: lightblue;
+}
+
+.resize {
+	width: 5%;
+	height: 5%;
+	margin:auto;
+}
+
+.resize2 {
+	width: 100px;
+	height: 100px;
+	margin: auto;
+	
+}
+
+.content1 {
+	font-size: 40ox;
+}
+
+div.capitalize {
+    text-transform: capitalize;
+}
+
+.example-card {
+  max-width: 600px;
+  float: left;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.title{
+	font-size: 200%; 
+	font-weight: bold;
+}
+
+.image{
+	width: 250px; 
+	height: 250px;
+}
+
+@media screen and (max-width:769px){
+	.image{
+		width: 30%;
+		height: 30%;
+	}
+	.title{
+		font-size: 150%;
+	}
+}

@@ -1,0 +1,63 @@
+<div class="center">
+  <h1 style="text-align:center; padding-top: 100px;">
+    Monash Internship Management System Login: Register Page
+  </h1>
+  <!--<form (ngSubmit)="register()">-->
+  <form
+    (ngSubmit)="register(coordReg)"
+    #coordReg="ngForm"
+    autocomplete="off"
+    class="formpad"
+  >
+    <!--<form [formGroup]="regForm" class="formpad" (ngSubmit)="register()">-->
+    <div class="form-group">
+      <label for="age">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        align="center"
+        id="username"
+        required
+        [(ngModel)]="user.username"
+        name="age"
+      />
+    </div>
+    <!--<p [ngClass]="{ 'has-error': isSubmitted && formControls.username.errors }">
+			<input type="username" placeholder="username" formControlName="username">
+		  </p>-->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        align="center"
+        id="email"
+        required
+        [(ngModel)]="user.email"
+        name="email"
+      />
+    </div>
+    <!--<p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+			<input type="email" placeholder="Email" formControlName="email">
+		  </p>
+		  <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+			<input type="password" placeholder="Pawwsord" formControlName="password">
+		  </p>-->
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        required
+        [(ngModel)]="user.password"
+        name="password"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+  <br />
+  <a routerLink="/coordinator/login">Back to Login</a>
+</div>

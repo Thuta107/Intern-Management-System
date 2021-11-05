@@ -1,0 +1,62 @@
+<div class="center">
+	<h1>Register as a Gold Buddy Partner today!</h1>
+	<img class="img-fluid img-circle resize img-hover"
+		src="assets/images/goldBuddyLogo.jpg">
+	<form (ngSubmit)="register()">
+
+		<div class="form-group">
+			<label for="age">Username</label> <input type="text"
+				class="form-control" id="username" required
+				[(ngModel)]="client.username" name="username">
+		</div>
+
+		<div class="form-group">
+			<label for="registerPassword">Password</label> <input type="password"
+				class="form-control" id="password" required
+				[(ngModel)]="client.password" name="registerPassword">
+		</div>
+
+		<div class="form-group">
+			<label for="companyName">Company Name</label> <input type="text"
+				class="form-control" id="companyName" required
+				[(ngModel)]="client.companyName" name="companyName">
+		</div>
+
+		<div class="form-group">
+			<label for="industry">Industry</label> <input type="text"
+				class="form-control" id="Industry Type" required
+				[(ngModel)]="client.industry" name="industry">
+		</div>
+
+		<!-- Newly added fields
+		<div class="form-group">
+			<label for="email">Contact Email</label> <input type="text"
+				class="form-control" id="email" required
+				[(ngModel)]="company.email" name="email">
+		</div>
+
+		<div class="form-group">
+			<label for="phone">Contact Phone Number</label> <input type="text"
+				class="form-control" id="phone" required
+				[(ngModel)]="company.cPhone" name="phone">
+		</div>
+
+		<div class="form-group">
+			<label for="specification">Job Specification</label> <input type="text"
+				class="form-control" id="specification" required
+				[(ngModel)]="company.jSpec" name="specification">
+		</div>
+
+		<div class="form-group">
+			<label for="address">Address</label> <textarea type="text"
+				class="form-control" id="Industry Type" required
+				[(ngModel)]="company.location" name="address"> </textarea>
+		</div>
+		-->
+
+		<button type="submit" class="btn btn-success">Submit</button>
+
+
+	</form>
+	<br> <a routerLink="/Login">Back to Login</a>
+</div>

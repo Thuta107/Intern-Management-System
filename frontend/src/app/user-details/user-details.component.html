@@ -1,0 +1,78 @@
+<div style="text-align: left; align:left; margin: 20px">
+	<p style="font-size:30px;">Student Details</p>
+	<p>Edit your student details. Keep it updated so employers may find you easier.</p>
+</div>
+
+<form (ngSubmit)="addDetails()" style="text-align: left; align:left; margin: 20px">
+
+	<div class="form-group">
+		<label for="age">Name</label> <input type="text"
+			class="form-control" id="username" align="center" size="250px"
+			required [(ngModel)]="userDetails.username" name="username">
+	</div>
+    
+	<div class="form-group">
+		<label for="age">Student ID</label> <input type="text"
+			class="form-control" id="studentID" align="center" size="250px"
+			required [(ngModel)]="userDetails.studentID" name="studentID">
+	</div>
+
+	<div class="form-group">
+		<label for="age">Age</label> <input type="text"
+			class="form-control" id="age" required
+			[(ngModel)]="userDetails.age" name="age">
+	</div>
+
+	<div class="form-group">
+		<label for="age">Contact Details</label> <input type="text"
+			class="form-control" id="course" required
+			[(ngModel)]="userDetails.course" name="course">
+	</div>
+	
+	<div class="form-group">
+		<label for="age">Address</label> <input type="text"
+			class="form-control" id="address" required
+			[(ngModel)]="userDetails.address" name="address">
+	</div>
+	
+	<div class="form-group">
+		<label for="age">General Interest</label> <input type="text"
+			class="form-control" id="generalInterest" required
+			[(ngModel)]="userDetails.generalInterest" name="generalInterest">
+	</div>
+	
+	<!--
+	<div class="form-group">
+		<label for="age">Postcode</label> <input type="text"
+			class="form-control" id="goToHospital" required
+			[(ngModel)]="userDetails.goToHospital" name="age">
+	</div>
+	
+		<div class="form-group">
+		<label for="age">Contact Number</label> <input type="text"
+			class="form-control" id="emerContact1" required
+			[(ngModel)]="userDetails.emerContact1" name="age">
+	</div>
+	-->
+	
+		<div class="form-group">
+		<label for="age">Race</label> <input type="text"
+			class="form-control" id="emerContact2" required
+			[(ngModel)]="userDetails.emerContact2" name="age">
+	</div>
+	
+		<div class="form-group">
+		<label for="age">Religion</label> <input type="text"
+			class="form-control" id="address" required
+			[(ngModel)]="userDetails.address" name="age">
+	</div>
+	
+		<div class="form-group">
+		<label for="age">Occupation</label> <input type="text"
+			class="form-control" id="generalInterests" required
+			[(ngModel)]="userDetails.generalInterests" name="age">
+	</div>
+	
+	<button type="submit" class="btn btn-success">Submit</button>
+	
+</form>

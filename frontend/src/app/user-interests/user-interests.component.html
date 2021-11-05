@@ -1,0 +1,46 @@
+
+
+<div style="text-align:center">
+  <h1>
+    User Interests
+  </h1>
+  <h2>Click on Interests to add!</h2>
+</div>
+
+
+
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <div fxFlex="30%">
+  	<p>Travel Locations</p>
+    <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/8V46UZCS0V.jpg" (click)="travelLocations()">
+  </div>
+  <div fxFlex="30%">
+  <p>Hobbies and Interests</p>
+    <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/LTLE4QGRVQ.jpg" (click)="hobbiesAndInterests()">
+  </div>
+ </div>
+  
+  
+
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+ <div fxFlex="30%">
+ <p>Food Interests</p>
+    <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/R926LU1YEA.jpg" (click)="foodInterests()">
+  </div>
+  <div fxFlex="30%">
+  <p>General Interests</p>
+    <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/U9PP3KXXY2.jpg" (click)="generalInterests()">
+  </div>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <mat-card class="card-picture" *ngFor="let picture of pictures">
+    <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+      <span fxFlex="80%">{{picture.title}}</span>
+      <mat-icon fxFlex="10%">mode_edit</mat-icon>
+      <mat-icon fxFlex="10%">delete</mat-icon>
+    </mat-card-title>
+    <img mat-card-image [src]="picture.img">
+  </mat-card>
+</div>
+</div>
+

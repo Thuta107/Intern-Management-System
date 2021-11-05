@@ -1,0 +1,30 @@
+<div class="navbar" style="background-color:steelblue">
+    <h1 style="color:white;">Coordinator Dashboard</h1>
+    <h3 style="color:white;">All Students Information</h3>
+  </div>
+
+<button name=i *ngIf="isCollapsed" (click)="getStudentDetails($event, i)">
+  See Student Info
+</button>
+<button *ngIf="!isCollapsed" (click)="getStudentDetails($event, i)">
+  Hide Student Info
+</button>
+
+<ul class="newstudlist">
+    <li *ngFor="let student of students; let i = index">
+    
+      {{ i + 1 }}) {{ student }}
+      <!-- <button name=i *ngIf="isCollapsed" (click)="getStudentDetails($event, i)">
+        See Student Info
+      </button>
+      <button *ngIf="!isCollapsed" (click)="getStudentDetails($event, i)">
+        Hide Student Info
+      </button> -->
+      <p *ngFor="let hero of newlist"></p>
+      <div *ngIf="!isCollapsed">
+        <div *ngFor="let hero of newlist[i]; let j = index">
+          {{ newlist[i][j] }}
+        </div>
+      </div>
+    </li>
+  </ul>

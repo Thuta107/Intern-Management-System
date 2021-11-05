@@ -1,0 +1,27 @@
+<div style="display: block; text-align: center; padding: 0px;">
+	<img src="assets/images/monashlogo.png" class="image">
+</div>
+
+<div style="display: block; text-align: center; padding: 20px;">
+	<span class="title"> Monash University Employer Portal</span>
+</div>
+
+<app-employer-dashboard>
+
+</app-employer-dashboard>
+
+<router-outlet></router-outlet>
+
+<div class="capitalize">
+	<ul>
+		<li *ngFor='let internship of internships'>
+            <button (click)="getInternshipList()" class="btn btn-outline-success my-2 my-sm-0" type="submit" >{{ internship.jobScope}}</button>
+            <p>Details here to be coming soon!</p>
+			
+		</li>
+	</ul>
+</div>
+
+
+
+

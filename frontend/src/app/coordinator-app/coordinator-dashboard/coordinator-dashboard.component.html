@@ -1,0 +1,135 @@
+<div class="navbar" style="background-color:steelblue">
+  <h1 style="color:white;">Coordinator Dashboard</h1>
+  <a (click)="logout()">Logout</a>
+</div>
+
+<div class="grid-container">
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile
+      *ngFor="let card of cards | async"
+      [colspan]="card.cols"
+      [rowspan]="card.rows"
+    >
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{ card.title }}
+            <button
+              mat-icon-button
+              class="more-button"
+              [matMenuTriggerFor]="menu"
+              aria-label="Toggle menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div *ngIf="card.title == 'Employers'">
+            <!--
+            <div *ngIf="card.title == 'Employers'">
+              
+              <ul>
+                <li *ngFor="let employer of employers">
+                  <a (click)="goToEmployer(employer)">{{employer.companyName}}, {{employer.location}}</a>
+                </li>
+              </ul>
+            </div>
+          -->
+            <table class="w3-table">
+              <tr>
+                <th>Company Name</th>
+                <th>Location</th>
+              </tr>
+              <tr (click)="goToEmployer(employers[0])">
+                <td>{{ employers[0].companyName }}</td>
+                <td>{{ employers[0].location }}</td>
+              </tr>
+              <tr (click)="goToEmployer(employers[1])">
+                <td>{{ employers[1].companyName }}</td>
+                <td>{{ employers[1].location }}</td>
+              </tr>
+              <tr (click)="goToEmployer(employers[2])">
+                <td>{{ employers[2].companyName }}</td>
+                <td>{{ employers[2].location }}</td>
+              </tr>
+              <tr (click)="goToEmployer(employers[3])">
+                <td>{{ employers[3].companyName }}</td>
+                <td>{{ employers[3].location }}</td>
+              </tr>
+            </table>
+
+            <!--<mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>-->
+          </div>
+          <table *ngIf="card.title == 'Students'" class="w3-table">
+            <tr routerLink="/coordinator/student-list">
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Year</th>
+              <th>Major</th>
+              <th>Status</th>
+            </tr>
+            <tr (click)="goToStudent(students[0])">
+              <td>{{ students[0].firstName }}</td>
+              <td>{{ students[0].lastName }}</td>
+              <td>{{ students[0].year }}</td>
+              <td>{{ students[0].course }}</td>
+              <td>{{ students[0].status }}</td>
+              <!-- <td>{{ internships[0].companyName }}</td> -->
+            </tr>
+            <tr (click)="goToStudent(students[1])">
+              <td>{{ students[1].firstName }}</td>
+              <td>{{ students[1].lastName }}</td>
+              <td>{{ students[1].year }}</td>
+              <td>{{ students[1].course }}</td>
+              <td>{{ students[1].status }}</td>
+            </tr>
+            <tr (click)="goToStudent(students[2])">
+              <td>{{ students[2].firstName }}</td>
+              <td>{{ students[2].lastName }}</td>
+              <td>{{ students[2].year }}</td>
+              <td>{{ students[2].course }}</td>
+              <td>{{ students[2].status }}</td>
+            </tr>
+            <tr (click)="goToStudent(students[3])">
+              <td>{{ students[3].firstName }}</td>
+              <td>{{ students[3].lastName }}</td>
+              <td>{{ students[3].year }}</td>
+              <td>{{ students[3].course }}</td>
+              <td>{{ students[3].status }}</td>
+            </tr>
+          </table>
+
+          <table *ngIf="card.title == 'Active Internships'" class="w3-table">
+            <tr>
+              <th>Student</th>
+              <th>Placement Company</th>
+              <th>Job Scope</th>
+              <th>Progress</th>
+            </tr>
+            <tr *ngFor="let internship of activeInternships">
+              <td>{{ internship.studentName }}</td>
+              <td>{{ internship.companyName }}</td>
+              <td>{{ internship.description }}</td>
+              <td>{{ internship.progress }}</td>
+              <td>
+                <button (click)="viewInternshipDocs(internship)">
+                  View Docs
+                </button>
+              </td>
+              <td>
+                <button (click)="generateInternshipReport(internship)">
+                  Generate Report
+                </button>
+              </td>
+            </tr>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

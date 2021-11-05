@@ -1,0 +1,32 @@
+
+<div class="title">
+    All Posted Jobs
+</div>
+
+<table style="padding-bottom: 60px;">
+    <tr>
+        <th>Internship</th>
+        <th>Job Scope</th>
+        <th>Seats Available</th>
+        <th></th>
+    </tr>
+
+    <tr *ngFor="let job of jobArray; let i = index" [class.deactivated] = "job.data.deactivated" (click)="redirectApplication(job)">
+        <td>
+            <div>{{job.data.jobScope}}</div>
+        </td>
+        <td>
+            <div>{{job.data.description}}</div>
+        </td>
+        <td>
+            <div>{{job.data.seats}}</div>
+        </td>
+        <td>
+            <div>
+                <button mat-raised-button color="warn" (click)="removeInternship(i)">
+                    <mat-icon style="color:black;">delete</mat-icon>
+                </button>
+            </div>
+        </td>
+    </tr>
+</table>

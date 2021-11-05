@@ -1,0 +1,51 @@
+.grid-container {
+    margin: 20px;
+  }
+  
+  .dashboard-card {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+  
+  .more-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  
+  .dashboard-card-content {
+    text-align: center;
+  }
+  
+  .resize {
+    width: 5%;
+    height: 5%;
+    margin: auto;
+  }
+  
+  .navbar {
+    width: 100%;
+    background-color: darkblue;
+    overflow: auto;
+  }
+  
+  .navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background-color: cornflowerblue;
+  }
+  
+  .active {
+    background-color: cornflowerblue;
+  }
+  

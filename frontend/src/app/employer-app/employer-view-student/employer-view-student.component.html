@@ -1,0 +1,69 @@
+<div class="title">
+    Student Details
+</div>
+    
+<table style="padding-bottom: 60px;">
+    <tr>
+        <th>Student Name</th>
+        <th>Age</th>
+        <th>Occupation</th>
+        <!--<th>Race</th>
+        <th>Religion</th>
+        <th>General Interest</th>
+        <th>Contact</th>
+        <th>Address</th>-->
+        <th></th>
+    </tr>
+    <!--
+    <tr *ngFor="let studentdetail of studentDetailArray">
+        <td>{{studentdetail.data.studentID}}</td>
+        <td>{{studentdetail.data.username}}</td>
+        <td>{{studentdetail.data.age}}</td>
+        <td>{{studentdetail.data.occupation}}</td>
+        <td>{{studentdetail.data.race}}</td>
+        <td>{{studentdetail.data.religion}}</td>
+        <td>{{studentdetail.data.generalInterest}}</td>
+        <td>{{studentdetail.data.contact}}</td>
+        <td>{{studentdetail.data.address}}</td>
+        
+        <td></td>
+    </tr>
+    -->
+
+    <tbody *ngFor="let studentdetail of studentDetailArray; let i = index">
+        <tr>
+            <td>
+                <div>{{studentdetail.data.username}}</div>
+            </td>
+            <td>
+                <div>{{studentdetail.data.age}}</div>
+            </td>
+            <td>
+                <div>{{studentdetail.data.occupation}}</div>
+            </td>
+            <td>
+                <div>
+                    <button class="dropbutton" (click)="changeSelection(i)">
+                        <mat-icon *ngIf="selectedIndex != i" class="icon" style="color:black;">keyboard_arrow_down</mat-icon>
+                        <mat-icon *ngIf="selectedIndex === i" class="icon" style="color:black;">keyboard_arrow_up</mat-icon>
+                    </button>
+                </div>
+            </td>
+        </tr>
+        <tr *ngIf="selectedIndex === i">
+            <td colspan="4"> 
+                <p style="font-size: 120%;" class="details"> <span style="font-weight: bold;">Race:</span> {{studentdetail.data.race}} </p>
+                <hr>
+                <p style="font-size: 120%;" class="details"> <span style="font-weight: bold;">Religion:</span> {{studentdetail.data.religion}} </p>
+                <hr>
+                <p style="font-size: 120%;" class="details"> <span style="font-weight: bold;">Contact Number:</span> {{studentdetail.data.contact}} </p>
+                <hr>
+                <p style="font-size: 120%; font-weight: bold;" class="details"> Address: </p>
+                <p class="details2"> {{studentdetail.data.address}}</p>
+                <hr>
+                <p style="font-size: 120%; font-weight: bold;" class="details"> General Interest: </p>
+                <p class="details2"> {{studentdetail.data.generalInterest}}</p>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,138 @@
+<div class="titleblock">
+    <span class="title">Student Applications for </span>
+    <span class="jobname">{{internshipName}}</span>
+    <span style="display:flex; float: right;">
+        <button class="back_button" (click)="redirectJobList()">
+            <mat-icon class="icon">undo</mat-icon> Back 
+        </button>
+    </span>
+</div>
+
+<div style="background-color:darkblue; padding-top: 20px; padding-bottom: 20px; padding-left: 40px; 
+margin-left:20px; margin-right: 20px;">
+    <h3 style="font-weight: bold; color: white;">Overview</h3>
+</div>
+
+<div class="info">Seats Offered: {{internshipSeats}}</div>
+<div class="info">Seats Left: {{internshipSeats-acceptedStudentArray.length}}</div>
+<div class="info">Accepted Applicants: {{acceptedStudentArray.length}}</div>
+
+<div style="background-color:darkblue; padding-top: 20px; padding-bottom: 20px; padding-left: 40px; 
+margin-left:20px; margin-right: 20px;">
+    <h3 style="font-weight: bold; color: white;">Applicant Details</h3>
+</div>
+
+<ul class="topnav">
+    <li>
+        <div class="total" *ngIf="shortlistvalue.status"> {{shortlistvalue.type}} : {{acceptedStudentArray.length}} </div>
+        <div class="total" *ngIf="!shortlistvalue.status"> {{shortlistvalue.type}} : {{applyingStudentArray.length}} </div>
+    </li>
+    <li class="right">
+        <select [(ngModel)]="selectedLevel" (change)="selected()" >
+            <option *ngFor="let item of data" [ngValue] = "item"> {{item.type}} </option>
+        </select>
+    </li>
+    <li class="right">
+        <div class="total"> Filter: </div>
+    </li>
+</ul>
+
+<div class="tableheader">
+    <table *ngIf="shortlistvalue.status">
+        <tr style="background-color:darkblue;">
+            <th>Student name</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <tbody *ngFor="let student of acceptedStudentArray; let i = index">
+            <tr>
+                <td>
+                    <div>{{student.data.studentId}}</div>
+                </td>
+                <td>
+                    <div>{{student.data.status}}</div>
+                </td>
+                <td>
+                    <div>
+                        <button mat-raised-button color="warn" (click)="undoAcceptStudent(i)">
+                            <mat-icon class="icon" style="color:black;">delete</mat-icon>
+                        </button>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <button class="dropbutton" (click)="changeSelection(i)">
+                            <mat-icon *ngIf="selectedIndex != i" class="icon" style="color:black;">keyboard_arrow_down</mat-icon>
+                            <mat-icon *ngIf="selectedIndex === i" class="icon" style="color:black;">keyboard_arrow_up</mat-icon>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr *ngIf="selectedIndex === i">
+                <td colspan="5"> 
+                    <p style="font-size: 120%; font-weight: bold;" class="details">Position Details</p>
+                    <p class="details2"> {{student.data.details}}</p>
+                    <div class="details" style="text-align: left;">
+                        <button (click)="viewAcceptedResume(i)"> View Resume </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+            
+    <table *ngIf="!shortlistvalue.status">
+        <tr>
+            <th>Student name</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+        </tr>
+
+        <tbody *ngFor="let student of applyingStudentArray; let i = index">
+            <tr>
+                <td>
+                    <div>{{student.data.studentId}}</div>
+                </td>
+                <td>
+                    <div>{{student.data.status}}</div>
+                </td>
+                <td>
+                    <div>
+                        <button mat-raised-button style="background-color: lightgreen;" (click)="acceptStudent(i)">
+                            <mat-icon class="icon" style="color:black;">done</mat-icon>
+                        </button>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <button mat-raised-button color="warn" (click)="rejectStudent(i)">
+                            <mat-icon class="icon" style="color:black;">delete</mat-icon>
+                        </button>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <button class="dropbutton" (click)="changeSelection(i)">
+                            <mat-icon *ngIf="selectedIndex != i" class="icon" style="color:black;">keyboard_arrow_down</mat-icon>
+                            <mat-icon *ngIf="selectedIndex === i" class="icon" style="color:black;">keyboard_arrow_up</mat-icon>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr *ngIf="selectedIndex === i">
+                <td colspan="6"> 
+                    <p style="font-size: 120%; font-weight: bold;" class="details">Position Details</p>
+                    <p class="details2"> {{student.data.details}}</p>
+                    <hr>
+                    <div class="details" style="text-align: left;">
+                        <button (click)="viewApplyingResume(i)"> View Resume </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

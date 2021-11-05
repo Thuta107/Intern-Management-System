@@ -1,0 +1,41 @@
+<div>
+  <h2 style="color:rgb(252, 252, 252);"> Company Profile </h2>
+</div> 
+
+<form (ngSubmit)="onAddPost()" #companyForm="ngForm" autocomplete="off" class="formpad">
+  
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" style="width:90%;" class="form-control" name="email" placeholder="" [(ngModel)]="employer.email" #email="ngModel" required disabled #email="ngModel">
+    <div [hidden]="email.valid || email.pristine" class="alert alert-danger"  style="width:90%; color: red;">
+      Email is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Company Name</label>
+    <input type="text" style="width:90%;" class="form-control" name="name" placeholder="-- Name --" [(ngModel)]="employer.companyName" #name="ngModel" required>
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger" style="width:90%; color: red;">
+      Name is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Contact Number</label>
+    <input type="number" style="width:90%;" class="form-control" name="phone" placeholder="-- Phone Number (Only number) --" [(ngModel)]="employer.phone" #phone="ngModel" required>
+    <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger" style="width:90%; color: red;">
+        Contact Number is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Address</label>
+    <textarea type="text" style="width:90%;" class="form-control" name="location" placeholder="-- Address --" [(ngModel)]="employer.location" #location="ngModel" required>
+    </textarea>
+    <div [hidden]="location.valid || location.pristine" class="alert alert-danger" style="width:90%; color: red;">
+        Address is required
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button [disabled]="!companyForm.form.valid" class="btn btn-success" type="submit" name="submitbutton">Save</button>
+    <button class="btn btn-primary" (click)="redirectAllPostedJobs()"  type="cancel" > Cancel </button>
+  </div>
+</form>

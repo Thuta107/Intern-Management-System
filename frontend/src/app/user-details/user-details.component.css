@@ -1,0 +1,30 @@
+.form-control {
+	width: 70%;
+	margin: auto;
+	align:left;
+}
+
+.center {
+	text-align: center;
+}
+
+.resize {
+	width: 400px;
+	height: 250px;
+}
+
+.img-hover {
+	border: none;
+	box-shadow: 0 0 10px black inset;
+}
+
+.red {
+	color: red;
+	font-colour: black;	
+}
+
+
+
+table {
+  width: 100%;
+}

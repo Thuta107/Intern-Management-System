@@ -1,0 +1,25 @@
+.form-control {
+	width: 20%;
+	margin: auto;
+}
+
+.center {
+	text-align: center;
+}
+
+.resize {
+	width: 400px;
+	height: 250px;
+}
+
+.img-hover {
+	border: none;
+	box-shadow: 0 0 10px black inset;
+}
+
+.background {
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:cover;
+}
